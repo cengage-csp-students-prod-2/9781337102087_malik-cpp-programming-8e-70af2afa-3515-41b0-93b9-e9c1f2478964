@@ -79,7 +79,7 @@ int main() {
     clock1.printTime();
     cout << endl;
 
-    // Create an object of extClockType with custom time and time zone
+    
     extClockType clock2(12, 30, 45, "EST");
     cout << "Custom clock: ";
     clock2.printTime();
