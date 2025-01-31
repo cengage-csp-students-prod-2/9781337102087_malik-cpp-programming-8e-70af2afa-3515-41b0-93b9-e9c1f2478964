@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// Constructor definition
+
 extClockType::extClockType(int h, int m, int s, string tz) : clockType(h, m, s) {
     timeZone = tz;
 }
