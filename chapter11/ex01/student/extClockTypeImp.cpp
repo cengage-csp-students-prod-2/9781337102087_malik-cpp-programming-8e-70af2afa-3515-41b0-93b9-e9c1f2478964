@@ -20,6 +20,6 @@ string extClockType::getTimeZone() const {
 
 // Print the time along with the time zone
 void extClockType::printExtTime() const {
-    printTime();
+    printTime();  // Call the base class print function
     cout << " " << timeZone << endl;
 }

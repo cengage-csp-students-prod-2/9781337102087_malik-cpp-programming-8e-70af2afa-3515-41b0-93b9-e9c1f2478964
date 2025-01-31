@@ -11,7 +11,7 @@ int main() {
     cout << "Current time: ";
     myClock.printExtTime();
 
-    
+    // Modify the time and time zone
     myClock.setTime(23, 15, 10);
     myClock.setTimeZone("PST");
 
