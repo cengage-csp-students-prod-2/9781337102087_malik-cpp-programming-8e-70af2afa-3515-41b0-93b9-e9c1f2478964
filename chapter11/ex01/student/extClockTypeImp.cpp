@@ -8,7 +8,7 @@ extClockType::extClockType(int h, int m, int s, string tz) : clockType(h, m, s) 
     timeZone = tz;
 }
 
-// Set the time zone
+
 void extClockType::setTimeZone(const string &tz) {
     timeZone = tz;
 }
