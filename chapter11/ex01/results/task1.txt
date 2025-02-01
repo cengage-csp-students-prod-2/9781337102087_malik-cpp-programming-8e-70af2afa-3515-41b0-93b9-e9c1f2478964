@@ -1,0 +1,7 @@
+
+Status: PASSED!
+Check: 1
+Test: Included a private member variable called `timeZone`
+Reason: private:
+string timeZone; + ` was found in the program.None
+Timestamp: 2025-02-01 13:38:56.429622
