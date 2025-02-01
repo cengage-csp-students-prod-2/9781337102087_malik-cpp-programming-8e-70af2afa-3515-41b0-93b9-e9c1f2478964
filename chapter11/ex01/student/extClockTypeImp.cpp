@@ -13,7 +13,7 @@ void extClockType::setTimeZone(const string &tz) {
     timeZone = tz;
 }
 
-// Get the time zone
+
 string extClockType::getTimeZone() const {
     return timeZone;
 }
