@@ -15,7 +15,7 @@ int main() {
     clock2.printTime();
     cout << endl;
 
-    // Test modifying time and time zone
+    
     clock1.setTime(9, 15, 0);
     clock1.setTimeZone("PST");
     cout << "Modified clock: ";
