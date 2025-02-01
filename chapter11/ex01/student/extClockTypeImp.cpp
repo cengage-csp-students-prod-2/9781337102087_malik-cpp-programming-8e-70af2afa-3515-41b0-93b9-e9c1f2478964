@@ -15,6 +15,6 @@ string extClockType::getTimeZone() const {
 }
 
 void extClockType::printTime() const {
-    clockType::printTime();
+    clockType::printTime(); // Call base class implementation
     cout << " " << timeZone;
 }

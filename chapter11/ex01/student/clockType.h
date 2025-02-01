@@ -14,7 +14,8 @@ public:
     clockType(int h = 0, int m = 0, int s = 0);
     void setTime(int h, int m, int s);
     void getTime(int &h, int &m, int &s) const;
-    void printTime() const;
+    virtual void printTime() const; // Add "virtual" to allow overriding
+    virtual ~clockType() = default; // Virtual destructor (optional, but good practice)
 };
 
 #endif
