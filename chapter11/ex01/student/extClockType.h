@@ -1,18 +1,19 @@
 #ifndef EXTCLOCKTYPE_H
 #define EXTCLOCKTYPE_H
 
-#include "clockType.h"  // Include the base class
-#include <string>       // For std::string
+#include "clockType.h"
+#include <string>
+using namespace std;
 
 class extClockType : public clockType {
 private:
-    std::string timeZone;
+    string timeZone;
 
 public:
-    extClockType(int h = 0, int m = 0, int s = 0, std::string tz = "UTC");
-    void setTimeZone(const std::string &tz);
-    std::string getTimeZone() const;
-    void printExtTime() const;
+    extClockType(int h = 0, int m = 0, int s = 0, const string &tz = "UTC");
+    void setTimeZone(const string &tz);
+    string getTimeZone() const;
+    void printTime() const;
 };
 
 #endif

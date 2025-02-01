@@ -1,7 +1,8 @@
 #ifndef CLOCKTYPE_H
 #define CLOCKTYPE_H
 
-#include <iostream>  // For input/output
+#include <iostream>
+using namespace std;
 
 class clockType {
 protected:

@@ -1,24 +1,21 @@
 #include "clockType.h"
-#include <iostream>
-
-using namespace std;
 
 clockType::clockType(int h, int m, int s) {
     setTime(h, m, s);
 }
 
 void clockType::setTime(int h, int m, int s) {
-    if (h >= 0 && h < 24)
+    if (0 <= h && h < 24)
         hours = h;
     else
         hours = 0;
 
-    if (m >= 0 && m < 60)
+    if (0 <= m && m < 60)
         minutes = m;
     else
         minutes = 0;
 
-    if (s >= 0 && s < 60)
+    if (0 <= s && s < 60)
         seconds = s;
     else
         seconds = 0;
@@ -31,7 +28,13 @@ void clockType::getTime(int &h, int &m, int &s) const {
 }
 
 void clockType::printTime() const {
-    cout << (hours < 10 ? "0" : "") << hours << ":"
-         << (minutes < 10 ? "0" : "") << minutes << ":"
-         << (seconds < 10 ? "0" : "") << seconds;
+    if (hours < 10)
+        cout << "0";
+    cout << hours << ":";
+    if (minutes < 10)
+        cout << "0";
+    cout << minutes << ":";
+    if (seconds < 10)
+        cout << "0";
+    cout << seconds;
 }
