@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    // Test default constructor
+   
     extClockType clock1;
     cout << "Default clock: ";
     clock1.printTime();
