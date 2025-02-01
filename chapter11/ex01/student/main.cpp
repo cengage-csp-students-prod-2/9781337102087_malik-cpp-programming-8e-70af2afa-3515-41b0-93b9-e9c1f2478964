@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    // Create an object of extClockType with default time and time zone
+   
     extClockType clock1;
     cout << "Default clock: ";
     clock1.printTime();
