@@ -1,4 +1,4 @@
-//Program that uses the class extClockType
+
  
 #include <iostream>
 #include "extClockType.h"
