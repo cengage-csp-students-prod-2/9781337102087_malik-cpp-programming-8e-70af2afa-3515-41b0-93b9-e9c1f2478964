@@ -9,7 +9,7 @@ int main() {
     clock1.printTime();
     cout << endl;
 
-    // Test custom initialization
+    
     extClockType clock2(12, 30, 45, "EST");
     cout << "Custom clock: ";
     clock2.printTime();
