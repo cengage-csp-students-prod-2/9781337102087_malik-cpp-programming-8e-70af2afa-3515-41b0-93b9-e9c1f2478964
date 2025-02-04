@@ -1,4 +1,3 @@
-
 //Implementation File for the class clockType
  
 #include <iostream>
