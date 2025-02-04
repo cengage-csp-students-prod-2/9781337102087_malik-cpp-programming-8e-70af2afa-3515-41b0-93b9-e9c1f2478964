@@ -99,7 +99,7 @@ clockType::clockType(int hours, int minutes, int seconds)
     sec = 0;
 }
 
-clockType::clockType()  //default constructor
+clockType::clockType()  
 {
     hr = 0;
     min = 0;
