@@ -3,16 +3,16 @@ Status: PASSED!
 Check: 1
 Test: The `extClockType` class inherits from the `clockType` class
 Reason: public clockType + ` was found in the program.None
-Timestamp: 2025-02-04 01:01:19.429175
+Timestamp: 2025-02-04 01:01:52.907346
 
 Status: PASSED!
 Check: 2
 Test: The class `extClockType` is derived from the class `clockType`, test 1
 Reason: None
-Timestamp: 2025-02-04 01:01:19.431873
+Timestamp: 2025-02-04 01:01:52.909602
 
 Status: PASSED!
 Check: 3
 Test: The class `extClockType` is derived from the class `clockType`, test 2
 Reason: None
-Timestamp: 2025-02-04 01:01:19.434110
+Timestamp: 2025-02-04 01:01:52.911714
