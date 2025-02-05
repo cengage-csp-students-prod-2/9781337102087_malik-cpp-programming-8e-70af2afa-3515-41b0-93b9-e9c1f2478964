@@ -1,7 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
-Test: 
-Reason: 
-Error : RuntimeError - There was an issue compiling the c++ files.
-Timestamp: 2025-02-05 00:27:53.220534
+Test: The program can initialize objects of the type `extClockType` without error
+Reason: None
+Timestamp: 2025-02-05 00:43:58.074268
