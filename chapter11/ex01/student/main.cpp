@@ -22,7 +22,7 @@ int main()
 
     time2.incrementSeconds();
 
-    clout << "After incrementing time2 by one second, Time 2: ";
+    cout << "After incrementing time2 by one second, Time 2: ";
     time2.printTime();
     cout << endl;
 
