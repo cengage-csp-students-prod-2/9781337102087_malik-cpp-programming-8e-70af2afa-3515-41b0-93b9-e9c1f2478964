@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    extClockType time1(5, 10, 34, "CST");
+    extClockType time1(5, 10, 34, "CST"); 
     extClockType time2;  
      
     cout << "Time 1: ";
