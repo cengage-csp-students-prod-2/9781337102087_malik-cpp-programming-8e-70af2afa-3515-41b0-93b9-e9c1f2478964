@@ -37,4 +37,4 @@ public:
     friend istream& operator>>(istream& is, rectangleType& rect);
 };
 
-#endif
+#endif // RECTANGLETYPE_H

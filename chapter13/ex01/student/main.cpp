@@ -34,11 +34,5 @@ int main() {
     cout << "rect1 >= rect2: " << (rect1 >= rect2 ? "True" : "False") << endl;
     cout << "rect1 <= rect2: " << (rect1 <= rect2 ? "True" : "False") << endl;
 
-   
-    rectangleType rect4;
-    cout << "\nEnter details for a new rectangle:\n";
-    cin >> rect4;
-    cout << "You entered: " << rect4 << endl;
-
     return 0;
 }
