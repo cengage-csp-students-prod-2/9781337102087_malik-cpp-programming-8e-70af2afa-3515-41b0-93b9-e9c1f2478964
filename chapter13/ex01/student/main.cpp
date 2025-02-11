@@ -34,7 +34,7 @@ int main() {
     cout << "rect1 >= rect2: " << (rect1 >= rect2 ? "True" : "False") << endl;
     cout << "rect1 <= rect2: " << (rect1 <= rect2 ? "True" : "False") << endl;
 
-    // Test Input Operator
+   
     rectangleType rect4;
     cout << "\nEnter details for a new rectangle:\n";
     cin >> rect4;
