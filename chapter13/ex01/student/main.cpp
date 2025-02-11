@@ -18,7 +18,7 @@ int main() {
     --rect1;
     cout << "After pre-decrement (--rect1): " << rect1 << endl;
 
-    // Test post-decrement operator
+    
     rect1--;
     cout << "After post-decrement (rect1--): " << rect1 << endl;
 
