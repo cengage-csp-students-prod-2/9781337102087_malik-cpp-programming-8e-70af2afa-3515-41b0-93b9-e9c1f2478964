@@ -11,14 +11,14 @@ double rectangleType::getLength() const { return length; }
 double rectangleType::getWidth() const { return width; }
 double rectangleType::area() const { return length * width; }
 
-// Pre-increment: Increase both dimensions by 1
+// Pre-increment
 rectangleType rectangleType::operator++() {
     ++length;
     ++width;
     return *this;
 }
 
-// Post-increment: Increase both dimensions by 1, return original
+// Post-increment
 rectangleType rectangleType::operator++(int) {
     rectangleType temp = *this;
     ++length;
@@ -26,14 +26,14 @@ rectangleType rectangleType::operator++(int) {
     return temp;
 }
 
-// Pre-decrement: Decrease both dimensions by 1 (must remain positive)
+// Pre-decrement
 rectangleType rectangleType::operator--() {
     if (length > 1) --length;
     if (width > 1) --width;
     return *this;
 }
 
-// Post-decrement: Decrease both dimensions by 1, return original
+// Post-decrement
 rectangleType rectangleType::operator--(int) {
     rectangleType temp = *this;
     if (length > 1) --length;
@@ -41,7 +41,7 @@ rectangleType rectangleType::operator--(int) {
     return temp;
 }
 
-// Binary Subtraction: Subtract dimensions of one rectangle from another
+// Subtraction Operator
 rectangleType rectangleType::operator-(const rectangleType& other) {
     double newLength = length - other.length;
     double newWidth = width - other.width;
@@ -54,43 +54,21 @@ rectangleType rectangleType::operator-(const rectangleType& other) {
     return rectangleType(newLength, newWidth);
 }
 
-// Equality operator (compare areas)
-bool rectangleType::operator==(const rectangleType& other) const {
-    return area() == other.area();
-}
+// Comparison Operators (Compare areas)
+bool rectangleType::operator==(const rectangleType& other) const { return area() == other.area(); }
+bool rectangleType::operator!=(const rectangleType& other) const { return area() != other.area(); }
+bool rectangleType::operator>(const rectangleType& other) const { return area() > other.area(); }
+bool rectangleType::operator<(const rectangleType& other) const { return area() < other.area(); }
+bool rectangleType::operator>=(const rectangleType& other) const { return area() >= other.area(); }
+bool rectangleType::operator<=(const rectangleType& other) const { return area() <= other.area(); }
 
-// Inequality operator (compare areas)
-bool rectangleType::operator!=(const rectangleType& other) const {
-    return area() != other.area();
-}
-
-// Greater than (compare areas)
-bool rectangleType::operator>(const rectangleType& other) const {
-    return area() > other.area();
-}
-
-// Less than (compare areas)
-bool rectangleType::operator<(const rectangleType& other) const {
-    return area() < other.area();
-}
-
-// Greater than or equal (compare areas)
-bool rectangleType::operator>=(const rectangleType& other) const {
-    return area() >= other.area();
-}
-
-// Less than or equal (compare areas)
-bool rectangleType::operator<=(const rectangleType& other) const {
-    return area() <= other.area();
-}
-
-// Overload << operator for output
+// Output Operator
 ostream& operator<<(ostream& os, const rectangleType& rect) {
     os << "Rectangle: Length = " << rect.length << ", Width = " << rect.width;
     return os;
 }
 
-// Overload >> operator for input
+// Input Operator
 istream& operator>>(istream& is, rectangleType& rect) {
     cout << "Enter length: ";
     is >> rect.length;
