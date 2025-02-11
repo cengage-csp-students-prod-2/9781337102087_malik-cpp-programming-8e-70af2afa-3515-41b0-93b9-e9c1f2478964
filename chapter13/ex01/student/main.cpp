@@ -25,7 +25,7 @@ int main() {
     rectangleType rect3 = rect1 - rect2;
     cout << "\nAfter subtracting rect2 from rect1: " << rect3 << endl;
 
-    // Test Relational Operators
+    
     cout << "\nComparison Results:\n";
     cout << "rect1 == rect2: " << (rect1 == rect2 ? "True" : "False") << endl;
     cout << "rect1 != rect2: " << (rect1 != rect2 ? "True" : "False") << endl;
