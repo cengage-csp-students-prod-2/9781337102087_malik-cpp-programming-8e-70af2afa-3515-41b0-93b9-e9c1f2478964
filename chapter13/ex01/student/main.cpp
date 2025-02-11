@@ -1,42 +1,44 @@
+#include <iostream>
 #include "rectangleType.h"
 
+using namespace std;
+
 int main() {
-    // Create two rectangles
-    rectangleType rect1(5, 10);
-    rectangleType rect2(3, 7);
+    // Create two rectangle objects
+    rectangleType rect1(10, 5);
+    rectangleType rect2(4, 3);
 
-    // Test pre-increment operator
-    cout << "Initial rect1: " << rect1 << endl;
-    ++rect1;
-    cout << "After pre-increment (++rect1): " << rect1 << endl;
+    cout << "Initial Rectangles:\n";
+    cout << rect1 << endl;
+    cout << rect2 << endl;
 
-    // Test post-increment operator
-    rect1++;
-    cout << "After post-increment (rect1++): " << rect1 << endl;
+    // Test Increment and Decrement Operators
+    cout << "\nIncrement rect1 (pre-increment): " << ++rect1 << endl;
+    cout << "Post-increment rect2: " << rect2++ << endl;
+    cout << "After post-increment: " << rect2 << endl;
 
-    // Test pre-decrement operator
-    --rect1;
-    cout << "After pre-decrement (--rect1): " << rect1 << endl;
+    cout << "\nDecrement rect1 (pre-decrement): " << --rect1 << endl;
+    cout << "Post-decrement rect2: " << rect2-- << endl;
+    cout << "After post-decrement: " << rect2 << endl;
 
-    
-    rect1--;
-    cout << "After post-decrement (rect1--): " << rect1 << endl;
-
-    
+    // Test Subtraction Operator
     rectangleType rect3 = rect1 - rect2;
-    cout << "Result of rect1 - rect2: " << rect3 << endl;
+    cout << "\nAfter subtracting rect2 from rect1: " << rect3 << endl;
 
-    // Test relational operators
-    cout << "Is rect1 == rect2? " << (rect1 == rect2 ? "Yes" : "No") << endl;
-    cout << "Is rect1 != rect2? " << (rect1 != rect2 ? "Yes" : "No") << endl;
-    cout << "Is rect1 > rect2? " << (rect1 > rect2 ? "Yes" : "No") << endl;
-    cout << "Is rect1 < rect2? " << (rect1 < rect2 ? "Yes" : "No") << endl;
+    // Test Relational Operators
+    cout << "\nComparison Results:\n";
+    cout << "rect1 == rect2: " << (rect1 == rect2 ? "True" : "False") << endl;
+    cout << "rect1 != rect2: " << (rect1 != rect2 ? "True" : "False") << endl;
+    cout << "rect1 > rect2: " << (rect1 > rect2 ? "True" : "False") << endl;
+    cout << "rect1 < rect2: " << (rect1 < rect2 ? "True" : "False") << endl;
+    cout << "rect1 >= rect2: " << (rect1 >= rect2 ? "True" : "False") << endl;
+    cout << "rect1 <= rect2: " << (rect1 <= rect2 ? "True" : "False") << endl;
 
-    // Test stream extraction operator
+    // Test Input Operator
     rectangleType rect4;
-    cout << "Enter dimensions for rect4:" << endl;
+    cout << "\nEnter details for a new rectangle:\n";
     cin >> rect4;
-    cout << "rect4: " << rect4 << endl;
+    cout << "You entered: " << rect4 << endl;
 
     return 0;
 }
