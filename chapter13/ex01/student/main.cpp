@@ -14,7 +14,7 @@ int main() {
     cout << rect1 << endl;
     cout << rect2 << endl;
 
-    // Test Increment and Decrement Operators
+    
     cout << "\nIncrement rect1 (pre-increment): " << ++rect1 << endl;
     cout << "Post-increment rect2: " << rect2++ << endl;
     cout << "After post-increment: " << rect2 << endl;
