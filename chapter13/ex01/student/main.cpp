@@ -5,7 +5,7 @@ int main() {
     rectangleType rect1(5, 10);
     rectangleType rect2(3, 7);
 
-    // Test pre-increment operator
+    // Test pre-increment operator 
     cout << "Initial rect1: " << rect1 << endl;
     ++rect1;
     cout << "After pre-increment (++rect1): " << rect1 << endl;
