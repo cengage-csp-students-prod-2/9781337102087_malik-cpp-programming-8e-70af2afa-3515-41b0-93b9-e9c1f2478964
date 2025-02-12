@@ -36,7 +36,7 @@ int main() {
     cout << "Is rect1 >= rect2? " << (rect1 >= rect2 ? "Yes" : "No") << endl;
     cout << "Is rect1 <= rect2? " << (rect1 <= rect2 ? "Yes" : "No") << endl;
 
-    // Test Input Operator
+    
     rectangleType rect5;
     cout << "\nEnter dimensions for a new rectangle:" << endl;
     cin >> rect5;
