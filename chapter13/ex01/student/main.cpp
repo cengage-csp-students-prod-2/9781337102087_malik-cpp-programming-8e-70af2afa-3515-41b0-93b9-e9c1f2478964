@@ -32,7 +32,7 @@ int main() {
     cout << "Is rect1 > rect2? " << (rect1 > rect2 ? "Yes" : "No") << endl;
     cout << "Is rect1 < rect2? " << (rect1 < rect2 ? "Yes" : "No") << endl;
 
-    // Test stream extraction operator
+    
     rectangleType rect4;
     cout << "Enter dimensions for rect4:" << endl;
     cin >> rect4;
