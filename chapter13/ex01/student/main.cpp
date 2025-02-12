@@ -22,7 +22,7 @@ int main() {
     rect1--;
     cout << "After post-decrement (rect1--): " << rect1 << endl;
 
-    // Test binary subtraction operator
+    
     rectangleType rect3 = rect1 - rect2;
     cout << "Result of rect1 - rect2: " << rect3 << endl;
 
