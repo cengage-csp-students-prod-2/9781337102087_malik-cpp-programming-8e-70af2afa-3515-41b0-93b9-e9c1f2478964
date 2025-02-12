@@ -2,6 +2,8 @@
 #define RECTANGLETYPE_H
 
 #include <iostream>
+#include <limits>
+
 using namespace std;
 
 class rectangleType {

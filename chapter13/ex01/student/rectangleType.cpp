@@ -65,16 +65,21 @@ ostream& operator<<(ostream& os, const rectangleType& rect) {
     return os;
 }
 
+// Improved Input Handling with Validation
 istream& operator>>(istream& is, rectangleType& rect) {
     cout << "Enter length: ";
-    is >> rect.length;
-    cout << "Enter width: ";
-    is >> rect.width;
-
-    if (rect.length <= 0 || rect.width <= 0) {
-        cout << "Invalid input! Setting to default values (1.0, 1.0)." << endl;
-        rect.length = 1.0;
-        rect.width = 1.0;
+    while (!(is >> rect.length) || rect.length <= 0) {
+        cout << "Invalid input! Enter a positive number for length: ";
+        is.clear(); // Clear error state
+        is.ignore(numeric_limits<streamsize>::max(), '\n'); // Discard invalid input
     }
+
+    cout << "Enter width: ";
+    while (!(is >> rect.width) || rect.width <= 0) {
+        cout << "Invalid input! Enter a positive number for width: ";
+        is.clear(); // Clear error state
+        is.ignore(numeric_limits<streamsize>::max(), '\n'); // Discard invalid input
+    }
+
     return is;
 }
