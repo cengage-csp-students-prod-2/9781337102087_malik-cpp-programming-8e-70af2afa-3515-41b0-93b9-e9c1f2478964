@@ -1,101 +1,80 @@
 #include "rectangleType.h"
 
-// Constructors
-rectangleType::rectangleType(double l, double w) : length(l), width(w) {}
+// Constructor
+rectangleType::rectangleType(double l, double w) {
+    length = (l > 0) ? l : 1.0;
+    width = (w > 0) ? w : 1.0;
+}
 
-// Getter functions
+// Getters
 double rectangleType::getLength() const { return length; }
 double rectangleType::getWidth() const { return width; }
+double rectangleType::area() const { return length * width; }
 
-// Setter functions
-void rectangleType::setDimensions(double l, double w) {
-    if (l > 0) length = l;
-    else length = 0;
-    if (w > 0) width = w;
-    else width = 0;
-}
+// Operator Overloads - Relational Operators (Compare Areas)
+bool rectangleType::operator==(const rectangleType& other) const { return area() == other.area(); }
+bool rectangleType::operator!=(const rectangleType& other) const { return area() != other.area(); }
+bool rectangleType::operator>(const rectangleType& other) const { return area() > other.area(); }
+bool rectangleType::operator<(const rectangleType& other) const { return area() < other.area(); }
+bool rectangleType::operator>=(const rectangleType& other) const { return area() >= other.area(); }
+bool rectangleType::operator<=(const rectangleType& other) const { return area() <= other.area(); }
 
-// Calculate area
-double rectangleType::area() const {
-    return length * width;
-}
-
-// Overload pre-increment operator (++rectangle)
-rectangleType& rectangleType::operator++() {
+// Operator Overloads - Increment & Decrement
+rectangleType rectangleType::operator++() {
     ++length;
     ++width;
     return *this;
 }
 
-// Overload post-increment operator (rectangle++)
 rectangleType rectangleType::operator++(int) {
     rectangleType temp = *this;
-    ++(*this);
+    ++length;
+    ++width;
     return temp;
 }
 
-// Overload pre-decrement operator (--rectangle)
-rectangleType& rectangleType::operator--() {
+rectangleType rectangleType::operator--() {
     if (length > 1) --length;
     if (width > 1) --width;
     return *this;
 }
 
-// Overload post-decrement operator (rectangle--)
 rectangleType rectangleType::operator--(int) {
     rectangleType temp = *this;
-    --(*this);
+    if (length > 1) --length;
+    if (width > 1) --width;
     return temp;
 }
 
-// Overload binary subtraction operator (rectangle1 - rectangle2)
-rectangleType rectangleType::operator-(const rectangleType& other) const {
+// Operator Overload - Subtraction
+rectangleType rectangleType::operator-(const rectangleType& other) {
     double newLength = length - other.length;
     double newWidth = width - other.width;
-    if (newLength > 0 && newWidth > 0) {
-        return rectangleType(newLength, newWidth);
-    } else {
-        cout << "Error: Resulting dimensions are not positive." << endl;
+
+    if (newLength <= 0 || newWidth <= 0) {
+        cout << "Subtraction would result in negative dimensions! Operation aborted." << endl;
         return *this;
     }
+
+    return rectangleType(newLength, newWidth);
 }
 
-// Overload relational operators based on area
-bool rectangleType::operator==(const rectangleType& other) const {
-    return area() == other.area();
-}
-
-bool rectangleType::operator!=(const rectangleType& other) const {
-    return area() != other.area();
-}
-
-bool rectangleType::operator<(const rectangleType& other) const {
-    return area() < other.area();
-}
-
-bool rectangleType::operator>(const rectangleType& other) const {
-    return area() > other.area();
-}
-
-bool rectangleType::operator<=(const rectangleType& other) const {
-    return area() <= other.area();
-}
-
-bool rectangleType::operator>=(const rectangleType& other) const {
-    return area() >= other.area();
-}
-
-// Overload stream insertion operator (<<)
+// Stream Operators
 ostream& operator<<(ostream& os, const rectangleType& rect) {
-    os << "Length: " << rect.length << ", Width: " << rect.width << ", Area: " << rect.area();
+    os << "Rectangle: Length = " << rect.length << ", Width = " << rect.width << ", Area = " << rect.area();
     return os;
 }
 
-// Overload stream extraction operator (>>)
 istream& operator>>(istream& is, rectangleType& rect) {
     cout << "Enter length: ";
     is >> rect.length;
     cout << "Enter width: ";
     is >> rect.width;
+
+    if (rect.length <= 0 || rect.width <= 0) {
+        cout << "Invalid input! Setting to default values (1.0, 1.0)." << endl;
+        rect.length = 1.0;
+        rect.width = 1.0;
+    }
     return is;
 }
