@@ -10,7 +10,7 @@ protected:
     double width;
 
 public:
-    // Constructors
+    // Constructor
     rectangleType(double l = 1.0, double w = 1.0);
 
     // Getters
@@ -32,7 +32,7 @@ public:
     rectangleType operator--(int); // Post-decrement
     rectangleType operator-(const rectangleType& other);
 
-    // Overloaded Stream Operators
+    // Stream Operators
     friend ostream& operator<<(ostream& os, const rectangleType& rect);
     friend istream& operator>>(istream& is, rectangleType& rect);
 };
