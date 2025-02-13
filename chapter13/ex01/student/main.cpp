@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    // Create Rectangle Objects
+    // Create Rectangle Objects 
     rectangleType rect1(5, 10);
     rectangleType rect2(3, 6);
     rectangleType rect3(5, 10);
