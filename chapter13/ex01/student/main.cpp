@@ -9,7 +9,7 @@ int main() {
     rectangleType rect2(3, 6);
     rectangleType rect3(5, 10);
 
-    // Test Output Operator
+    // Test Output Operator 
     cout << "Initial Rectangles:" << endl;
     cout << rect1 << endl;
     cout << rect2 << endl;
