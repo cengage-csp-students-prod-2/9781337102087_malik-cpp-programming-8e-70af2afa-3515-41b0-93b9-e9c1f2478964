@@ -32,7 +32,7 @@ public:
     rectangleType operator--(int); // Post-decrement
     rectangleType operator-(const rectangleType& other);
 
-    // Stream Operators 
+    // Stream Operators  
     friend ostream& operator<<(ostream& os, const rectangleType& rect);
     friend istream& operator>>(istream& is, rectangleType& rect);
 };
