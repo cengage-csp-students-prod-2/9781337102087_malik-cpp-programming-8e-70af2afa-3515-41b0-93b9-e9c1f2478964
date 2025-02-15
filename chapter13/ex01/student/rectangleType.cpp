@@ -1,33 +1,26 @@
 #include "rectangleType.h"
 
-// Constructors
-rectangleType::rectangleType(double l, double w) : length(l), width(w) {}
-
-// Accessors
-double rectangleType::getLength() const {
-    return length;
+// Constructor
+rectangleType::rectangleType(double l, double w) {
+    length = (l > 0) ? l : 1.0;
+    width = (w > 0) ? w : 1.0;
 }
 
-double rectangleType::getWidth() const {
-    return width;
-}
+// Getters
+double rectangleType::getLength() const { return length; }
+double rectangleType::getWidth() const { return width; }
+double rectangleType::area() const { return length * width; }
 
-// Mutators
-void rectangleType::setLength(double l) {
-    length = l;
-}
+// Relational Operators (Compare Areas)
+bool rectangleType::operator==(const rectangleType& other) const { return area() == other.area(); }
+bool rectangleType::operator!=(const rectangleType& other) const { return area() != other.area(); }
+bool rectangleType::operator>(const rectangleType& other) const { return area() > other.area(); }
+bool rectangleType::operator<(const rectangleType& other) const { return area() < other.area(); }
+bool rectangleType::operator>=(const rectangleType& other) const { return area() >= other.area(); }
+bool rectangleType::operator<=(const rectangleType& other) const { return area() <= other.area(); }
 
-void rectangleType::setWidth(double w) {
-    width = w;
-}
-
-// Area calculation
-double rectangleType::area() const {
-    return length * width;
-}
-
-// Overload operators
-rectangleType& rectangleType::operator++() {
+// Increment and Decrement Operators
+rectangleType rectangleType::operator++() {
     ++length;
     ++width;
     return *this;
@@ -35,65 +28,40 @@ rectangleType& rectangleType::operator++() {
 
 rectangleType rectangleType::operator++(int) {
     rectangleType temp = *this;
-    ++(*this);
+    ++length;
+    ++width;
     return temp;
 }
 
-rectangleType& rectangleType::operator--() {
-    if (length > 1 && width > 1) {
-        --length;
-        --width;
-    } else {
-        cout << "Cannot decrement: dimensions must be positive." << endl;
-    }
+rectangleType rectangleType::operator--() {
+    if (length > 1) --length;
+    if (width > 1) --width;
     return *this;
 }
 
 rectangleType rectangleType::operator--(int) {
     rectangleType temp = *this;
-    --(*this);
+    if (length > 1) --length;
+    if (width > 1) --width;
     return temp;
 }
 
-rectangleType rectangleType::operator-(const rectangleType& other) const {
+// Subtraction Operator
+rectangleType rectangleType::operator-(const rectangleType& other) {
     double newLength = length - other.length;
     double newWidth = width - other.width;
-    if (newLength > 0 && newWidth > 0) {
-        return rectangleType(newLength, newWidth);
-    } else {
-        cout << "Cannot subtract: resulting dimensions must be positive." << endl;
+
+    if (newLength <= 0 || newWidth <= 0) {
+        cout << "Subtraction would result in negative dimensions! Operation aborted." << endl;
         return *this;
     }
+
+    return rectangleType(newLength, newWidth);
 }
 
-// Relational operators
-bool rectangleType::operator==(const rectangleType& other) const {
-    return area() == other.area();
-}
-
-bool rectangleType::operator!=(const rectangleType& other) const {
-    return area() != other.area();
-}
-
-bool rectangleType::operator>(const rectangleType& other) const {
-    return area() > other.area();
-}
-
-bool rectangleType::operator<(const rectangleType& other) const {
-    return area() < other.area();
-}
-
-bool rectangleType::operator>=(const rectangleType& other) const {
-    return area() >= other.area();
-}
-
-bool rectangleType::operator<=(const rectangleType& other) const {
-    return area() <= other.area();
-}
-
-// Stream operators
+// Stream Operators
 ostream& operator<<(ostream& os, const rectangleType& rect) {
-    os << "Length: " << rect.length << ", Width: " << rect.width << ", Area: " << rect.area();
+    os << "Rectangle: Length = " << rect.length << ", Width = " << rect.width << ", Area = " << rect.area();
     return os;
 }
 
@@ -102,5 +70,11 @@ istream& operator>>(istream& is, rectangleType& rect) {
     is >> rect.length;
     cout << "Enter width: ";
     is >> rect.width;
+
+    if (rect.length <= 0 || rect.width <= 0) {
+        cout << "Invalid input! Setting to default values (1.0, 1.0)." << endl;
+        rect.length = 1.0;
+        rect.width = 1.0;
+    }
     return is;
 }
