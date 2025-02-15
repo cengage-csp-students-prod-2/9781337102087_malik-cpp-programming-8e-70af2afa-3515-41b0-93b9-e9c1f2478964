@@ -16,7 +16,7 @@ int main() {
     if (rect1 == rect2) {
         cout << "Rect1 and Rect2 have the same area." << endl;
     } else {
-        cout << "Rect1 and Rect2 do not have the same area." << endl;
+        cout << "Rect1 and Rect2 do not have the same area." << endl; 
     }
 
     return 0;
