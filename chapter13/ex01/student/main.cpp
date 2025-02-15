@@ -19,6 +19,5 @@ int main() {
         cout << "Rect1 and Rect2 do not have the same area." << endl;
     }
 
-    return 0;   
-    
+    return 0;
 }
