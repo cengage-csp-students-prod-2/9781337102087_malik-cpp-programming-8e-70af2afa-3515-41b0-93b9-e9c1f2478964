@@ -101,6 +101,6 @@ istream& operator>>(istream& is, rectangleType& rect) {
     cout << "Enter length: ";
     is >> rect.length;
     cout << "Enter width: ";
-    is >> rect.width;
+    is >> rect.width;mn
     return is;
 }
