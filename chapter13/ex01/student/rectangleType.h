@@ -24,22 +24,14 @@ public:
     // Area calculation
     double area() const;
 
-    // Overload pre-increment operator
-    rectangleType& operator++();
-
-    // Overload post-increment operator
-    rectangleType operator++(int);
-
-    // Overload pre-decrement operator
-    rectangleType& operator--();
-
-    // Overload post-decrement operator
-    rectangleType operator--(int);
-
-    // Overload binary operator -
+    // Overload operators
+    rectangleType& operator++();       // Pre-increment
+    rectangleType operator++(int);     // Post-increment
+    rectangleType& operator--();       // Pre-decrement
+    rectangleType operator--(int);     // Post-decrement
     rectangleType operator-(const rectangleType& other) const;
 
-    // Overload relational operators
+    // Relational operators
     bool operator==(const rectangleType& other) const;
     bool operator!=(const rectangleType& other) const;
     bool operator>(const rectangleType& other) const;
@@ -47,7 +39,7 @@ public:
     bool operator>=(const rectangleType& other) const;
     bool operator<=(const rectangleType& other) const;
 
-    // Overload stream insertion and extraction operators
+    // Friend functions for stream operators
     friend ostream& operator<<(ostream& os, const rectangleType& rect);
     friend istream& operator>>(istream& is, rectangleType& rect);
 };

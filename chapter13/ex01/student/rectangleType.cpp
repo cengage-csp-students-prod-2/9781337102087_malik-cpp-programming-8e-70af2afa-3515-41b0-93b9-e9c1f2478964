@@ -26,21 +26,19 @@ double rectangleType::area() const {
     return length * width;
 }
 
-// Overload pre-increment operator
+// Overload operators
 rectangleType& rectangleType::operator++() {
     ++length;
     ++width;
     return *this;
 }
 
-// Overload post-increment operator
 rectangleType rectangleType::operator++(int) {
     rectangleType temp = *this;
     ++(*this);
     return temp;
 }
 
-// Overload pre-decrement operator
 rectangleType& rectangleType::operator--() {
     if (length > 1 && width > 1) {
         --length;
@@ -51,14 +49,12 @@ rectangleType& rectangleType::operator--() {
     return *this;
 }
 
-// Overload post-decrement operator
 rectangleType rectangleType::operator--(int) {
     rectangleType temp = *this;
     --(*this);
     return temp;
 }
 
-// Overload binary operator -
 rectangleType rectangleType::operator-(const rectangleType& other) const {
     double newLength = length - other.length;
     double newWidth = width - other.width;
@@ -70,7 +66,7 @@ rectangleType rectangleType::operator-(const rectangleType& other) const {
     }
 }
 
-// Overload relational operators
+// Relational operators
 bool rectangleType::operator==(const rectangleType& other) const {
     return area() == other.area();
 }
@@ -95,13 +91,12 @@ bool rectangleType::operator<=(const rectangleType& other) const {
     return area() <= other.area();
 }
 
-// Overload stream insertion operator
+// Stream operators
 ostream& operator<<(ostream& os, const rectangleType& rect) {
     os << "Length: " << rect.length << ", Width: " << rect.width << ", Area: " << rect.area();
     return os;
 }
 
-// Overload stream extraction operator
 istream& operator>>(istream& is, rectangleType& rect) {
     cout << "Enter length: ";
     is >> rect.length;
