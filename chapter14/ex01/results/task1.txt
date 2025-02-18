@@ -1,10 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Negative number entered
-Reason: Unable to find '['A non positive number is entered']' in the program's output.
-Enter length in feet: A non-positive number is entered. Please try again.
-Enter length in feet: Enter length in inches: The equivalent length in centimeters is: 66.04 cm
-.
-Error : AssertionError - Unable to find A non positive number is entered in the program's output.
-Timestamp: 2025-02-18 00:59:09.590338
+Reason: None
+Timestamp: 2025-02-18 01:03:38.658443
