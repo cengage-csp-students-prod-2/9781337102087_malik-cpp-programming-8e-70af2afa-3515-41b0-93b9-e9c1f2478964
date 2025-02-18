@@ -25,7 +25,7 @@ int main() {
             if (cin.fail() || feet < 0) {
                 cin.clear(); // Clear the error flag
                 cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Discard invalid input
-                throw runtime_error("A non-positive number is entered.");
+                throw runtime_error("A non positive number is entered");
             }
 
             // Prompt for inches
@@ -36,7 +36,7 @@ int main() {
             if (cin.fail() || inches < 0) {
                 cin.clear(); // Clear the error flag
                 cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Discard invalid input
-                throw runtime_error("A non-positive number is entered.");
+                throw runtime_error("A non positive number is entered");
             }
 
             // If input is valid, calculate and display the result
@@ -46,8 +46,8 @@ int main() {
 
             validInput = true; // Exit the loop
         } catch (const runtime_error& e) {
-            // Handle the exception and display the error message 
-            cout << e.what() << " Please try again." << endl;
+            // Handle the exception and display the error message
+            cout << e.what() << ". Please try again." << endl;
         }
     }
 
