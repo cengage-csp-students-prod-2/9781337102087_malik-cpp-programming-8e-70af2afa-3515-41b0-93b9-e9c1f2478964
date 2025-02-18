@@ -46,7 +46,7 @@ int main() {
 
             validInput = true; // Exit the loop
         } catch (const runtime_error& e) {
-            // Handle the exception and display the error message
+            // Handle the exception and display the error message 
             cout << e.what() << " Please try again." << endl;
         }
     }
